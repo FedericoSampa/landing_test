@@ -39,7 +39,7 @@ export default function Navbar() {
           <span className="navbar__logo">
             avalith<span className="navbar__dot">.</span>
           </span>
-          <span className="navbar__sub">Academ</span>
+          <span className="navbar__sub">Academy</span>
         </a>
 
         <button
