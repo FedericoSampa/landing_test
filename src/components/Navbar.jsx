@@ -3,18 +3,18 @@ import './Navbar.css'
 
 const menuColumns = [
   [
-    { href: '#top',           label: 'Inicio' },
-    { href: '#ava-ia',        label: 'Ava IA' },
+    { href: '#top', label: 'Inicio' },
+    { href: '#ava-ia', label: 'Ava IA' },
     { href: '#que-es-player', label: 'Ser un Player' },
-    { href: '#squad',         label: 'Entra en la cancha' },
-    { href: '#metodo',        label: 'El método' },
+    { href: '#squad', label: 'Entra en la cancha' },
+    { href: '#metodo', label: 'El método' },
   ],
   [
-    { href: '#evolucion',     label: 'Evolución de player' },
-    { href: '#path',          label: 'Tu Path' },
-    { href: '#liderazgo',     label: 'Liderazgo' },
-    { href: '#stacks',        label: 'Stack' },
-    { href: '#cta',           label: '¿Queres ser un player?' },
+    { href: '#evolucion', label: 'Evolución de player' },
+    { href: '#path', label: 'Tu Path' },
+    { href: '#liderazgo', label: 'Liderazgo' },
+    { href: '#stacks', label: 'Stack' },
+    { href: '#cta', label: '¿Queres ser un player?' },
   ],
 ]
 
@@ -39,7 +39,7 @@ export default function Navbar() {
           <span className="navbar__logo">
             avalith<span className="navbar__dot">.</span>
           </span>
-          <span className="navbar__sub">Academy</span>
+          <span className="navbar__sub">Academ</span>
         </a>
 
         <button
