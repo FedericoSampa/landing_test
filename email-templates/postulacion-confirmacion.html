@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡Gracias por comunicarte con Avalith Academy!</title>
+<!--
+  Plantilla email transaccional - Confirmación de postulación
+  Variables a reemplazar desde el backend:
+    {{NOMBRE}}        - Nombre del postulante (ej. "Julian")
+    {{IMAGEN_URL}}    - URL absoluta de la imagen "+500 alumnos"
+    {{LOGO_URL}}      - URL absoluta del logo Avalith Academy
+    {{ANIO}}          - Año actual (ej. 2026)
+    {{URL_FB}} {{URL_IG}} {{URL_X}} {{URL_YT}} {{URL_TT}} - URLs redes
+  Estilos inline (estándar para emails). Tested en Gmail/Outlook/Apple Mail.
+-->
+</head>
+<body style="margin:0; padding:0; background:#E5EAF5; font-family: Arial, Helvetica, sans-serif; color:#0E1633;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#E5EAF5;">
+  <tr>
+    <td align="center" style="padding: 32px 16px;">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%;">
+
+        <!-- Logo Avalith circular -->
+        <tr>
+          <td align="center" style="padding-bottom: 20px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td width="56" height="56" align="center" valign="middle"
+                    style="background:#2D4DFF; border-radius:50%; color:#ffffff; font-weight:700; font-size:22px; font-family: Arial, sans-serif;">
+                  a
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Saludo -->
+        <tr>
+          <td align="center" style="padding-bottom: 24px;">
+            <h1 style="margin:0; font-size:30px; line-height:1.2; color:#0E1633; font-weight:600;">
+              ¡Hola <strong style="color:#0E1633; font-weight:800;">{{NOMBRE}}</strong>!
+            </h1>
+          </td>
+        </tr>
+
+        <!-- Card principal -->
+        <tr>
+          <td>
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
+                   style="background:#ffffff; border-radius:18px; box-shadow: 0 12px 32px rgba(13,27,80,0.08);">
+              <tr>
+                <td style="padding: 32px 28px;">
+                  <p style="margin:0 0 18px; font-size:16px; color:#0E1633; text-align:center; font-weight:600;">
+                    Confirmamos que recibimos tu postulación para
+                  </p>
+
+                  <!-- Logo brand inline (texto) -->
+                  <p style="margin:0 0 24px; text-align:center; font-family: Arial, Helvetica, sans-serif;">
+                    <span style="font-size:22px; font-weight:800; color:#0E1633; letter-spacing:-0.5px;">avalith<span style="color:#FF3D5E;">.</span></span>
+                    <span style="font-size:18px; color:#4A5375; font-weight:400; margin-left:6px;">Academy</span>
+                  </p>
+
+                  <!-- Imagen: alumnos -->
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td align="center" style="padding-bottom:24px;">
+                        <img src="{{IMAGEN_URL}}" alt="+500 alumnos ya transformaron su carrera"
+                             width="440" height="220"
+                             style="display:block; max-width:100%; height:auto; border-radius:14px; border:0;" />
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!-- Cuerpo -->
+                  <p style="margin:0 0 14px; font-size:15px; line-height:1.55; color:#4A5375; text-align:center;">
+                    Nos encanta que quieras ser parte de esta evolución. Nuestros mentores ya tienen tu perfil en sus manos.
+                  </p>
+                  <p style="margin:0 0 18px; font-size:14px; line-height:1.55; color:#4A5375; text-align:center;">
+                    ¡Estate atento a tu correo, pronto tendrás novedades nuestras!
+                  </p>
+
+                  <p style="margin:24px 0 0; font-size:14px; color:#4A5375; text-align:center;">
+                    El equipo de
+                    <strong style="color:#0E1633; font-weight:800;">avalith<span style="color:#FF3D5E; font-weight:800;">.</span></strong>
+                    <span style="color:#4A5375;">Academy</span>
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Redes sociales -->
+        <tr>
+          <td align="center" style="padding: 28px 0 12px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="padding: 0 8px;"><a href="{{URL_FB}}" style="text-decoration:none;"><img src="https://cdn.simpleicons.org/facebook/8B92AB" width="22" height="22" alt="Facebook" style="display:block; border:0;" /></a></td>
+                <td style="padding: 0 8px;"><a href="{{URL_IG}}" style="text-decoration:none;"><img src="https://cdn.simpleicons.org/instagram/8B92AB" width="22" height="22" alt="Instagram" style="display:block; border:0;" /></a></td>
+                <td style="padding: 0 8px;"><a href="{{URL_X}}"  style="text-decoration:none;"><img src="https://cdn.simpleicons.org/x/8B92AB"         width="22" height="22" alt="X / Twitter" style="display:block; border:0;" /></a></td>
+                <td style="padding: 0 8px;"><a href="{{URL_YT}}" style="text-decoration:none;"><img src="https://cdn.simpleicons.org/youtube/8B92AB"   width="22" height="22" alt="YouTube" style="display:block; border:0;" /></a></td>
+                <td style="padding: 0 8px;"><a href="{{URL_TT}}" style="text-decoration:none;"><img src="https://cdn.simpleicons.org/tiktok/8B92AB"    width="22" height="22" alt="TikTok" style="display:block; border:0;" /></a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Copyright -->
+        <tr>
+          <td align="center" style="padding: 12px 16px 24px;">
+            <p style="margin:0; font-size:12px; color:#8B92AB;">
+              Copyright &copy; {{ANIO}} &nbsp;
+              <strong style="color:#0E1633; font-weight:700;">avalith<span style="color:#FF3D5E; font-weight:700;">.</span></strong>
+              <span style="color:#8B92AB;">Academy</span>
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,112 @@
+.player {
+  background: var(--color-bg-light);
+  padding-block: clamp(3rem, 7vw, 5.5rem);
+}
+
+.player__inner {
+  max-width: 980px;
+  margin-inline: auto;
+}
+
+.player__header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.player__title {
+  font-size: clamp(1.75rem, 3vw + 0.75rem, 2.75rem);
+  color: var(--color-text-dark);
+  margin-bottom: 0.875rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.text-blue {
+  color: var(--color-blue);
+  font-style: italic;
+}
+
+.player__lead {
+  font-size: clamp(0.95rem, 0.4vw + 0.85rem, 1.0625rem);
+  color: var(--color-text-dark-muted);
+  max-width: 56ch;
+  margin-inline: auto;
+}
+.player__lead strong {
+  color: var(--color-text-dark);
+  font-weight: 700;
+}
+
+.player__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.player-card {
+  background: var(--color-surface-light);
+  border: 1px solid #E4E8F2;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.player-card__img {
+  aspect-ratio: 16 / 10;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.player-card__img--old {
+  background:
+    linear-gradient(180deg, rgba(20,30,80,0.25), rgba(20,30,80,0.1)),
+    radial-gradient(circle at 30% 50%, #5A6B85 0%, #2E3850 100%);
+}
+
+.player-card__img--new {
+  background:
+    linear-gradient(180deg, rgba(20,30,80,0.18), rgba(20,30,80,0.05)),
+    radial-gradient(circle at 50% 40%, #C9A06A 0%, #6B4F3A 100%);
+}
+
+.player-card__img-tag {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  padding: 3px 7px;
+  border-radius: 4px;
+}
+
+.player-card__body {
+  padding: 1.5rem;
+  text-align: center;
+  flex: 1;
+}
+.player-card__body h3 {
+  font-size: 1.25rem;
+  color: var(--color-text-dark);
+  margin-bottom: 0.625rem;
+}
+.player-card__body p {
+  font-size: 0.925rem;
+  color: var(--color-text-dark-muted);
+  line-height: 1.55;
+}
+
+.player__cta-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 720px) {
+  .player__cards { grid-template-columns: 1fr; }
+  .player__cta-wrap { justify-content: center; }
+}

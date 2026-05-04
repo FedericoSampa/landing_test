@@ -1,0 +1,128 @@
+.method {
+  background: var(--color-bg-light);
+  padding-block: clamp(3rem, 7vw, 5.5rem) 0;
+}
+
+.method__inner {
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.method__header {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+.method__header h2 {
+  color: var(--color-text-dark);
+  font-size: clamp(1.75rem, 3vw + 0.75rem, 2.75rem);
+  margin-bottom: 0.875rem;
+}
+.method__header p {
+  font-size: clamp(0.95rem, 0.4vw + 0.85rem, 1.0625rem);
+  color: var(--color-text-dark-muted);
+  max-width: 60ch;
+  margin-inline: auto;
+}
+.method__header strong {
+  color: var(--color-text-dark);
+  font-weight: 700;
+}
+
+.method__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.method-card {
+  position: relative;
+  background: var(--color-surface-light);
+  border-radius: var(--radius-lg);
+  padding-bottom: 1.75rem;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.method-card__art {
+  height: 300px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.method-card__art .card-image__photo {
+  object-position: center center;
+}
+.method-card__art--autonomia {
+  background:
+    linear-gradient(160deg, rgba(255,255,255,0.0), rgba(45,77,255,0.15)),
+    radial-gradient(circle at 30% 50%, #B8C6E8 0%, #5A6B85 100%);
+}
+.method-card__art--colaboracion {
+  background:
+    linear-gradient(160deg, rgba(255,255,255,0), rgba(45,77,255,0.15)),
+    linear-gradient(135deg, #1F3CE0, #0A1A6B);
+}
+.method-card__art--cambio {
+  background:
+    linear-gradient(160deg, rgba(255,255,255,0), rgba(45,77,255,0.15)),
+    radial-gradient(circle at 60% 40%, #C9D6F0 0%, #6B8AB0 100%);
+}
+.method-card__art svg {
+  width: 70%;
+  height: auto;
+}
+
+.method-card__body {
+  padding-inline: 1.5rem;
+  padding-top: 1.25rem;
+}
+.method-card__body h3 {
+  font-size: 1.125rem;
+  color: var(--color-text-dark);
+  margin-bottom: 0.625rem;
+}
+.method-card__body p {
+  font-size: 0.875rem;
+  color: var(--color-text-dark-muted);
+  line-height: 1.6;
+}
+
+.method__cta-wrap {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+/* Banner azul Your PATH */
+.method__banner {
+  background: var(--color-blue);
+  color: #fff;
+  text-align: center;
+  padding-block: clamp(2rem, 5vw, 3rem);
+  margin-top: 0;
+}
+.method__banner h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw + 0.75rem, 2.25rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.method__banner p {
+  color: rgba(255,255,255,0.9);
+  font-size: clamp(0.9rem, 0.3vw + 0.85rem, 1rem);
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+@media (max-width: 800px) {
+  .method__cards {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin-inline: auto;
+  }
+  .method__cta-wrap { justify-content: center; }
+}
