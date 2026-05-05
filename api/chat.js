@@ -1,11 +1,11 @@
 // Vercel Serverless Function — POST /api/chat
-// Recibe { message, history } y devuelve { reply } usando OpenAI.
+// Recibe { message, history } y devuelve { reply } usando Anthropic Claude.
 //
-// La OPENAI_API_KEY se configura:
-//   - Local: en .env del proyecto (variable OPENAI_API_KEY, sin prefijo VITE_)
+// La ANTHROPIC_API_KEY se configura:
+//   - Local: en .env del proyecto (variable ANTHROPIC_API_KEY, sin prefijo VITE_)
 //   - Producción: en Vercel → Project Settings → Environment Variables
 
-import OpenAI from 'openai'
+import Anthropic from '@anthropic-ai/sdk'
 
 const SYSTEM_PROMPT = `Sos Ava IA, la asistente virtual de Avalith Academy 2026, el programa de Inteligencia Artificial.
 
@@ -33,9 +33,9 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed. Usá POST.' })
   }
 
-  if (!process.env.OPENAI_API_KEY) {
+  if (!process.env.ANTHROPIC_API_KEY) {
     return res.status(500).json({
-      error: 'OPENAI_API_KEY no configurada. Agregala al .env local o a Vercel Env Vars.'
+      error: 'ANTHROPIC_API_KEY no configurada. Agregala al .env local o a Vercel Env Vars.'
     })
   }
 
@@ -45,17 +45,15 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Falta el mensaje.' })
     }
 
-    // Limitar historial a últimas 10 vueltas para no agrandar el contexto
     const recentHistory = Array.isArray(history) ? history.slice(-10) : []
 
-    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+    const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
 
-    const response = await openai.chat.completions.create({
-      model: 'gpt-4o-mini',
+    const response = await anthropic.messages.create({
+      model: 'claude-haiku-4-5',
       max_tokens: 400,
-      temperature: 0.7,
+      system: SYSTEM_PROMPT,
       messages: [
-        { role: 'system', content: SYSTEM_PROMPT },
         ...recentHistory.map(m => ({
           role: m.role === 'user' ? 'user' : 'assistant',
           content: String(m.content || '').slice(0, 2000),
@@ -64,7 +62,7 @@ export default async function handler(req, res) {
       ],
     })
 
-    const reply = response.choices?.[0]?.message?.content || 'Disculpá, no pude generar respuesta.'
+    const reply = response.content?.[0]?.text || 'Disculpá, no pude generar respuesta.'
     return res.status(200).json({ reply })
   } catch (err) {
     console.error('[/api/chat] Error:', err)
